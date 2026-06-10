@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>札幌・積丹 男3人旅 しおり | 2026.7.3-7.5</title>
+<style>
+  :root{
+    --blue:#0a6ebd; --blue-deep:#08486f; --sky:#3fa9f5; --shakotan:#00b3c4;
+    --ink:#1a2730; --paper:#f4f8fb; --card:#ffffff; --line:#d8e6f0;
+    --accent:#ff7a3c; --gold:#e0a93b; --muted:#6a8196;
+    --shadow:0 6px 22px rgba(10,70,111,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",system-ui,sans-serif;
+    color:var(--ink); background:var(--paper); line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  img{max-width:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative; color:#fff; text-align:center;
+    padding:64px 20px 72px;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,.18), transparent 60%),
+      linear-gradient(160deg,#063d63 0%, var(--blue) 45%, var(--shakotan) 100%);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:""; position:absolute; left:0; right:0; bottom:-1px; height:48px;
+    background:var(--paper);
+    -webkit-mask:radial-gradient(28px at 30px 0, transparent 98%, #000) repeat-x;
+    mask:radial-gradient(28px at 30px 0, transparent 98%, #000) repeat-x;
+    -webkit-mask-size:60px 48px; mask-size:60px 48px;
+  }
+  .hero .tag{
+    display:inline-block; font-size:12px; letter-spacing:.25em;
+    border:1px solid rgba(255,255,255,.6); border-radius:99px;
+    padding:5px 16px; margin-bottom:18px; backdrop-filter:blur(2px);
+  }
+  .hero h1{font-size:clamp(28px,7vw,46px);font-weight:800;letter-spacing:.02em;line-height:1.25}
+  .hero h1 .sub{display:block;font-size:.45em;font-weight:600;letter-spacing:.3em;opacity:.92;margin-top:10px}
+  .hero .dates{margin-top:22px;font-size:clamp(15px,3.6vw,19px);font-weight:700}
+  .hero .crew{margin-top:6px;font-size:13px;opacity:.9;letter-spacing:.15em}
+
+  /* ===== Nav ===== */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(255,255,255,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    display:flex; gap:6px; overflow-x:auto; padding:10px 12px;
+    scrollbar-width:none;
+  }
+  nav::-webkit-scrollbar{display:none}
+  nav a{
+    flex:0 0 auto; text-decoration:none; color:var(--blue-deep);
+    font-size:13px; font-weight:700; padding:7px 14px; border-radius:99px;
+    background:var(--paper); border:1px solid var(--line); white-space:nowrap;
+  }
+  nav a:active{background:var(--blue);color:#fff}
+
+  /* ===== Section ===== */
+  section{margin-top:40px;scroll-margin-top:64px}
+  .day-head{
+    display:flex; align-items:center; gap:14px; margin-bottom:18px;
+  }
+  .day-badge{
+    flex:0 0 auto; width:58px; height:58px; border-radius:16px;
+    background:linear-gradient(150deg,var(--blue),var(--shakotan));
+    color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    box-shadow:var(--shadow); line-height:1.1;
+  }
+  .day-badge .d{font-size:10px;letter-spacing:.15em;opacity:.9}
+  .day-badge .n{font-size:24px;font-weight:800}
+  .day-head .ttl{font-size:clamp(17px,4.4vw,21px);font-weight:800}
+  .day-head .ttl small{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.05em;margin-top:2px}
+
+  /* ===== Timeline ===== */
+  .tl{position:relative;margin-left:8px;padding-left:26px;border-left:2px dashed var(--line)}
+  .ev{position:relative;margin:0 0 16px}
+  .ev::before{
+    content:""; position:absolute; left:-34px; top:5px;
+    width:13px; height:13px; border-radius:50%;
+    background:#fff; border:3px solid var(--sky);
+  }
+  .ev.hi::before{border-color:var(--accent);background:#fff}
+  .ev.free::before{border-color:var(--gold)}
+  .ev .t{
+    display:inline-block; font-variant-numeric:tabular-nums;
+    font-weight:800; color:var(--blue-deep); font-size:14px;
+    background:#eaf3fa; border-radius:7px; padding:1px 9px; margin-bottom:4px;
+  }
+  .ev .body{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:11px 14px; box-shadow:var(--shadow);
+  }
+  .ev .h{font-weight:700;font-size:15px}
+  .ev .h .pin{color:var(--accent)}
+  .ev .note{font-size:13px;color:var(--muted);margin-top:3px}
+  .ev.free .body{background:linear-gradient(180deg,#fffdf5,#fff8e8);border-color:#f0e0b0}
+  .ev.free .h{color:#a9781a}
+
+  .flighttag{font-size:11px;font-weight:700;color:#fff;background:var(--blue);border-radius:6px;padding:2px 8px;margin-left:6px;letter-spacing:.05em}
+
+  /* ===== Plan tabs (Day2) ===== */
+  .plan-switch{display:flex;gap:8px;margin:4px 0 18px}
+  .plan-switch button{
+    flex:1; font-family:inherit; cursor:pointer; font-weight:800; font-size:14px;
+    padding:13px 8px; border-radius:13px; border:2px solid var(--line);
+    background:#fff; color:var(--muted); transition:.18s; line-height:1.3;
+  }
+  .plan-switch button small{display:block;font-size:11px;font-weight:600;margin-top:2px}
+  .plan-switch button.on{
+    border-color:var(--blue); color:#fff;
+    background:linear-gradient(150deg,var(--blue),var(--shakotan));
+    box-shadow:var(--shadow);
+  }
+  .plan{display:none}
+  .plan.on{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .plan-lead{
+    font-size:13px;color:var(--blue-deep);background:#eaf6f8;border:1px solid #c8e9ee;
+    border-radius:10px;padding:9px 13px;margin-bottom:14px;
+  }
+
+  /* ===== Info cards ===== */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.grid{grid-template-columns:1fr}}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:15px 16px;box-shadow:var(--shadow);
+  }
+  .card h3{font-size:13px;letter-spacing:.08em;color:var(--blue);margin-bottom:8px;font-weight:800}
+  .card .row{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:4px 0;border-bottom:1px dotted var(--line)}
+  .card .row:last-child{border-bottom:0}
+  .card .row span:first-child{color:var(--muted);flex:0 0 auto}
+  .card .row span:last-child{font-weight:700;text-align:right}
+
+  /* flight strip */
+  .flight{display:flex;align-items:center;gap:10px;font-weight:800}
+  .flight .ap{font-size:18px;color:var(--blue-deep)}
+  .flight .arr{flex:1;text-align:center;color:var(--shakotan);font-size:13px}
+  .flight .arr::before{content:"✈ ";}
+  .flight .arr hr{border:0;border-top:2px dotted var(--sky);margin:2px 0 0}
+  .flight .tm{font-size:12px;color:var(--muted);font-weight:600}
+
+  /* checklist */
+  .check li{list-style:none;padding:9px 0 9px 30px;position:relative;border-bottom:1px dotted var(--line);font-size:14px}
+  .check li:last-child{border-bottom:0}
+  .check li::before{
+    content:"";position:absolute;left:2px;top:12px;width:16px;height:16px;
+    border:2px solid var(--sky);border-radius:5px;
+  }
+  .check li b{color:var(--blue-deep)}
+  .check .must{color:var(--accent);font-weight:800;font-size:11px;border:1px solid var(--accent);border-radius:5px;padding:0 5px;margin-left:6px}
+
+  .stay{display:flex;flex-direction:column;gap:10px}
+  .stay .opt{display:flex;gap:12px;align-items:flex-start}
+  .stay .opt .mk{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .stay .opt .mk.b{background:var(--shakotan)}
+  .stay .opt .d{font-size:13px}
+  .stay .opt .d b{font-size:14px}
+  .stay .opt .d span{color:var(--muted)}
+
+  footer{text-align:center;margin-top:54px;font-size:12px;color:var(--muted)}
+  footer .big{font-size:15px;font-weight:800;color:var(--blue-deep);margin-bottom:6px}
+  .sec-label{font-size:12px;letter-spacing:.3em;color:var(--shakotan);font-weight:800;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <span class="tag">SAPPORO × SHAKOTAN BLUE</span>
+    <h1>札幌・積丹 男旅<span class="sub">2026 SUMMER TRIP</span></h1>
+    <div class="dates">2026.7.3 (FRI) – 7.5 (SUN) ／ 2泊3日</div>
+    <div class="crew">MEMBER: 30s MEN ×3 ・ グルメ / 地ビール / 絶景 / 夜遊び</div>
+  </header>
+
+  <nav>
+    <a href="#info">基本情報</a>
+    <a href="#flight">フライト</a>
+    <a href="#day1">DAY 1</a>
+    <a href="#day2">DAY 2</a>
+    <a href="#day3">DAY 3</a>
+    <a href="#pack">持ち物</a>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- ===== 基本情報 ===== -->
+    <section id="info">
+      <div class="sec-label">TRIP INFO</div>
+      <div class="grid">
+        <div class="card">
+          <h3>OVERVIEW</h3>
+          <div class="row"><span>日程</span><span>7/3(金)〜7/5(日)</span></div>
+          <div class="row"><span>泊数</span><span>2泊3日</span></div>
+          <div class="row"><span>人数</span><span>男3名（30代）</span></div>
+          <div class="row"><span>移動</span><span>1・3日目=公共交通／2日目=レンタカー</span></div>
+        </div>
+        <div class="card">
+          <h3>STAY 宿泊候補</h3>
+          <div class="stay">
+            <div class="opt">
+              <div class="mk">A</div>
+              <div class="d"><b>DAITO residence 中央区役所前</b><br>
+              <span>中央区南3西12 ／ 地下鉄「西11丁目」徒歩8分（Airbnb）</span></div>
+            </div>
+            <div class="opt">
+              <div class="mk b">H</div>
+              <div class="d"><b>大通・すすきののトリプルホテル</b><br>
+              <span>大浴場・サウナ付きを検討中</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== フライト ===== -->
+    <section id="flight">
+      <div class="sec-label">FLIGHT</div>
+      <div class="grid">
+        <div class="card">
+          <h3>往路 7/3(金)</h3>
+          <div class="flight">
+            <div><div class="ap">UKB</div><div class="tm">09:15発</div></div>
+            <div class="arr">1h50m<hr></div>
+            <div style="text-align:right"><div class="ap">CTS</div><div class="tm">11:05着</div></div>
+          </div>
+          <div class="row" style="margin-top:8px"><span>集合</span><span>08:00 神戸空港</span></div>
+          <div class="row"><span>保安検査</span><span>08:45通過</span></div>
+        </div>
+        <div class="card">
+          <h3>復路 7/5(日)</h3>
+          <div class="flight">
+            <div><div class="ap">CTS</div><div class="tm">15:00発</div></div>
+            <div class="arr">1h55m<hr></div>
+            <div style="text-align:right"><div class="ap">UKB</div><div class="tm">16:55着</div></div>
+          </div>
+          <div class="row" style="margin-top:8px"><span>搭乗手続</span><span>13:10完了</span></div>
+          <div class="row"><span>保安検査</span><span>14:30通過</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DAY 1 ===== -->
+    <section id="day1">
+      <div class="day-head">
+        <div class="day-badge"><div class="d">DAY</div><div class="n">1</div></div>
+        <div class="ttl">札幌ビール・すすきの王道<small>7月3日(金)</small></div>
+      </div>
+      <div class="tl">
+        <div class="ev"><span class="t">08:00</span><div class="body"><div class="h">神戸空港 集合</div><div class="note">出発1時間15分前。チェックイン開始</div></div></div>
+        <div class="ev"><span class="t">08:45</span><div class="body"><div class="h">保安検査 通過</div><div class="note">出発30分前締め切り</div></div></div>
+        <div class="ev hi"><span class="t">09:15</span><div class="body"><div class="h">神戸空港 発<span class="flighttag">UKB→CTS</span></div><div class="note">フライト約1時間50分</div></div></div>
+        <div class="ev"><span class="t">11:05</span><div class="body"><div class="h">新千歳空港 着</div><div class="note">荷物受取後、JR駅へ移動</div></div></div>
+        <div class="ev"><span class="t">11:42</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌行</div></div></div>
+        <div class="ev"><span class="t">12:21</span><div class="body"><div class="h">札幌駅 着</div></div></div>
+        <div class="ev hi"><span class="t">12:40</span><div class="body"><div class="h"><span class="pin">🍛</span> スープカレーランチ</div><div class="note">GARAKU、Suage+ など札幌駅周辺の有名店</div></div></div>
+        <div class="ev"><span class="t">14:00</span><div class="body"><div class="h">ホテルへ移動</div><div class="note">大通・すすきの周辺</div></div></div>
+        <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">チェックイン／荷物預け</div></div></div>
+        <div class="ev hi"><span class="t">15:15</span><div class="body"><div class="h"><span class="pin">🍺</span> サッポロビール博物館</div><div class="note">プレミアムツアー参加。創業当時の再現ビールで開幕の乾杯</div></div></div>
+        <div class="ev hi"><span class="t">18:45</span><div class="body"><div class="h"><span class="pin">🐑</span> ジンギスカンディナー <span style="font-size:11px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:1px 7px;margin-left:4px">予約済</span></div><div class="note">マルタケ すすきの本店（18:45〜）</div></div></div>
+        <div class="ev free"><span class="t">夜〜深夜</span><div class="body"><div class="h">🌙 夜は完全フリー</div><div class="note">もいわ山ロープウェイ夜景／バニーガールバー（ミリオン）／ショーパブ（LaLa Too）／締めラーメン（えびそば一幻）など</div></div></div>
+      </div>
+    </section>
+
+    <!-- ===== DAY 2 ===== -->
+    <section id="day2">
+      <div class="day-head">
+        <div class="day-badge"><div class="d">DAY</div><div class="n">2</div></div>
+        <div class="ttl">選べる大自然デー<small>7月4日(土) ／ レンタカー（19:00返却）</small></div>
+      </div>
+
+      <div class="plan-lead">どちらも <b>10:00出発 → 19:00すすきの帰還</b>。前夜の夜更かし考慮でゆっくりスタート。タブで切替できます👇</div>
+
+      <div class="plan-switch">
+        <button id="btnA" class="on" onclick="showPlan('A')">プランA<small>積丹ブルー＆余市</small></button>
+        <button id="btnB" onclick="showPlan('B')">プランB<small>定山渓ラフティング＆温泉</small></button>
+      </div>
+
+      <!-- Plan A -->
+      <div id="planA" class="plan on">
+        <div class="tl">
+          <div class="ev"><span class="t">10:00</span><div class="body"><div class="h">ホテル出発・レンタカー受取</div><div class="note">余市方面へドライブ</div></div></div>
+          <div class="ev hi"><span class="t">11:30</span><div class="body"><div class="h"><span class="pin">🥃</span> ニッカウヰスキー余市蒸溜所</div><div class="note">赤レンガの敷地散策。有料試飲で限定ウイスキー（運転手以外）</div></div></div>
+          <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🦑</span> 積丹で豪快海鮮ランチ</div><div class="note">ホッケ焼き・イカ刺し・カニをガッツリ。ウニ行列は回避する大人ルート</div></div></div>
+          <div class="ev hi"><span class="t">15:00</span><div class="body"><div class="h"><span class="pin">🌊</span> 神威岬で積丹ブルー</div><div class="note">片道20分の遊歩道→先端の絶景。売店でミント味ブルーソフト</div></div></div>
+          <div class="ev"><span class="t">16:45</span><div class="body"><div class="h">小樽の海沿いドライブ</div><div class="note">札幌へ約2時間</div></div></div>
+          <div class="ev free"><span class="t">19:00</span><div class="body"><div class="h">🌙 すすきの帰還・返却 → ハシゴ酒</div></div></div>
+        </div>
+      </div>
+
+      <!-- Plan B -->
+      <div id="planB" class="plan">
+        <div class="tl">
+          <div class="ev"><span class="t">10:00</span><div class="body"><div class="h">ホテル出発・レンタカー受取</div><div class="note">定山渓方面へドライブ</div></div></div>
+          <div class="ev hi"><span class="t">11:30</span><div class="body"><div class="h"><span class="pin">🍖</span> 定山渓でローカルランチ</div><div class="note">生ジンギスカン「じんじん」／ネパールカレーの「八剣山果樹園」など</div></div></div>
+          <div class="ev hi"><span class="t">13:15</span><div class="body"><div class="h"><span class="pin">🚣</span> 豊平川ラフティング</div><div class="note">13:30午後便・約2時間。飛び込みスポットありで男旅のハイライト</div></div></div>
+          <div class="ev hi"><span class="t">16:00</span><div class="body"><div class="h"><span class="pin">♨️</span> 定山渓温泉で日帰り秘湯</div><div class="note">巨大露天で有名な老舗「豊平峡温泉」など源泉かけ流しでリカバリー</div></div></div>
+          <div class="ev"><span class="t">17:30</span><div class="body"><div class="h">車内爆音ドライブで帰還</div><div class="note">札幌へ約1時間半</div></div></div>
+          <div class="ev free"><span class="t">19:00</span><div class="body"><div class="h">🌙 すすきの帰還・返却 → ハシゴ酒</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DAY 3 ===== -->
+    <section id="day3">
+      <div class="day-head">
+        <div class="day-badge"><div class="d">DAY</div><div class="n">3</div></div>
+        <div class="ttl">のんびり極上締め＆神戸帰還<small>7月5日(日)</small></div>
+      </div>
+      <div class="tl">
+        <div class="ev"><span class="t">09:30</span><div class="body"><div class="h">チェックアウト（10:00厳守）</div><div class="note">大通・すすきのの駅ロッカーへ荷物預け</div></div></div>
+        <div class="ev hi"><span class="t">10:00</span><div class="body"><div class="h"><span class="pin">🍚</span> 二条市場で海鮮丼の朝食</div></div></div>
+        <div class="ev"><span class="t">11:15</span><div class="body"><div class="h">大通公園＆さっぽろテレビ塔 散策</div><div class="note">ベンチで北海道限定「サッポロクラシック」を一杯</div></div></div>
+        <div class="ev"><span class="t">12:15</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌駅→新千歳空港</div></div></div>
+        <div class="ev"><span class="t">12:55</span><div class="body"><div class="h">新千歳空港 着</div></div></div>
+        <div class="ev"><span class="t">13:10</span><div class="body"><div class="h">搭乗手続・手荷物預け完了</div><div class="note">先に身軽になる</div></div></div>
+        <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🍜</span> お土産＆締めラーメン</div><div class="note">北海道ラーメン道場（えびそば一幻 など）</div></div></div>
+        <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">保安検査 通過</div></div></div>
+        <div class="ev hi"><span class="t">15:00</span><div class="body"><div class="h">新千歳空港 発<span class="flighttag">CTS→UKB</span></div></div></div>
+        <div class="ev"><span class="t">16:55</span><div class="body"><div class="h">神戸空港 着・解散</div></div></div>
+      </div>
+    </section>
+
+    <!-- ===== 持ち物 ===== -->
+    <section id="pack">
+      <div class="sec-label">PACKING & NOTES</div>
+      <div class="card">
+        <h3>持ち物・準備メモ</h3>
+        <ul class="check">
+          <li><b>薄手の羽織りもの</b>（パーカー／ジャケット）<span class="must">必須</span><br><span style="color:var(--muted);font-size:12px">7月でも夜の札幌・海沿いは冷える</span></li>
+          <li><b>スニーカー</b> <span style="color:var(--muted);font-size:12px">※プランA選択時</span><span class="must">A必須</span><br><span style="color:var(--muted);font-size:12px">神威岬の遊歩道を往復40分</span></li>
+          <li><b>水着 or 濡れてOKなT/短パン＋タオル</b> <span style="color:var(--muted);font-size:12px">※プランB選択時</span><span class="must">B必須</span><br><span style="color:var(--muted);font-size:12px">ラフティング用に各自</span></li>
+          <li><b>レンタカー</b>は2日目のみ日帰り（19:00返却）<br><span style="color:var(--muted);font-size:12px">宿の駐車場問題を回避</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="big">いい旅を 🍺🌊♨️</div>
+      札幌・積丹 男3人旅 ／ 2026.7.3 – 7.5<br>
+      <span style="font-size:11px">しおり作成: 2026.6.9</span>
+    </footer>
+
+  </div>
+
+<script>
+  function showPlan(p){
+    var a = p==='A';
+    document.getElementById('planA').classList.toggle('on', a);
+    document.getElementById('planB').classList.toggle('on', !a);
+    document.getElementById('btnA').classList.toggle('on', a);
+    document.getElementById('btnB').classList.toggle('on', !a);
+  }
+</script>
+</body>
+</html>
