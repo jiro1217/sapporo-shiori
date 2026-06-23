@@ -101,6 +101,9 @@
   .ev .h{font-weight:700;font-size:15px}
   .ev .h .pin{color:var(--accent)}
   .ev .note{font-size:13px;color:var(--muted);margin-top:3px}
+  .ref{display:inline-block;margin-top:7px;margin-right:6px;font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;background:#eef6fc;border:1px solid #cfe6f5;border-radius:7px;padding:2px 9px}
+  .ref::before{content:"🔗 "}
+  .ref:active{background:var(--blue);color:#fff}
   .ev.free .body{background:linear-gradient(180deg,#fffdf5,#fff8e8);border-color:#f0e0b0}
   .ev.free .h{color:#a9781a}
 
@@ -177,7 +180,7 @@
     <span class="tag">SAPPORO × SHAKOTAN BLUE</span>
     <h1>札幌・積丹 男旅<span class="sub">2026 SUMMER TRIP</span></h1>
     <div class="dates">2026.7.3 (FRI) – 7.5 (SUN) ／ 2泊3日</div>
-    <div class="crew">MEMBER: 30s MEN ×3 ・ グルメ / 地ビール / 絶景 / 夜遊び</div>
+    <div class="crew">MEMBER: 30s MEN ×3 ・ グルメ / 地ビール / 絶景</div>
   </header>
 
   <nav>
@@ -203,17 +206,12 @@
           <div class="row"><span>移動</span><span>1・3日目=公共交通／2日目=レンタカー</span></div>
         </div>
         <div class="card">
-          <h3>STAY 宿泊候補</h3>
+          <h3>STAY 宿泊先</h3>
           <div class="stay">
             <div class="opt">
               <div class="mk">A</div>
-              <div class="d"><b>DAITO residence 中央区役所前</b><br>
+              <div class="d"><b>DAITO residence 中央区役所前</b> <span style="font-size:11px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:1px 7px">確定</span><br>
               <span>中央区南3西12 ／ 地下鉄「西11丁目」徒歩8分（Airbnb）</span></div>
-            </div>
-            <div class="opt">
-              <div class="mk b">H</div>
-              <div class="d"><b>大通・すすきののトリプルホテル</b><br>
-              <span>大浴場・サウナ付きを検討中</span></div>
             </div>
           </div>
         </div>
@@ -260,11 +258,12 @@
         <div class="ev"><span class="t">11:05</span><div class="body"><div class="h">新千歳空港 着</div><div class="note">荷物受取後、JR駅へ移動</div></div></div>
         <div class="ev"><span class="t">11:42</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌行</div></div></div>
         <div class="ev"><span class="t">12:21</span><div class="body"><div class="h">札幌駅 着</div></div></div>
-        <div class="ev hi"><span class="t">12:40</span><div class="body"><div class="h"><span class="pin">🍛</span> スープカレーランチ</div><div class="note">GARAKU、Suage+ など札幌駅周辺の有名店</div></div></div>
+        <div class="ev hi"><span class="t">12:40</span><div class="body"><div class="h"><span class="pin">🍛</span> スープカレーランチ</div><div class="note">札幌名物スープカレー。スパイスの効いた濃厚スープと角煮・チキンが人気の名店ぞろい。行列必至なので早めに。</div><a class="ref" href="https://s-garaku.com/shop-garaku/" target="_blank" rel="noopener">GARAKU 本店</a><a class="ref" href="https://suage.info/stores/suage-plus/" target="_blank" rel="noopener">Suage+</a></div></div>
         <div class="ev"><span class="t">14:00</span><div class="body"><div class="h">ホテルへ移動</div><div class="note">大通・すすきの周辺</div></div></div>
         <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">チェックイン／荷物預け</div></div></div>
-        <div class="ev hi"><span class="t">15:15</span><div class="body"><div class="h"><span class="pin">🍺</span> サッポロビール博物館</div><div class="note">プレミアムツアー参加。創業当時の再現ビールで開幕の乾杯</div></div></div>
-        <div class="ev hi"><span class="t">18:00</span><div class="body"><div class="h"><span class="pin">🐑</span> ジンギスカンディナー <span style="font-size:11px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:1px 7px;margin-left:4px">予約済</span></div><div class="note">マルタケ すすきの本店（18:00〜）</div></div></div>
+        <div class="ev hi"><span class="t">15:15</span><div class="body"><div class="h"><span class="pin">🍺</span> サッポロビール博物館</div><div class="note">日本唯一のビール専門博物館。赤レンガの建物でプレミアムツアーに参加し、創業当時の再現ビールで開幕の乾杯。<br><span style="color:var(--accent);font-weight:700">※2026/7/1より入館有料化。要事前確認</span></div><a class="ref" href="https://www.sapporobeer.jp/brewery/s_museum/" target="_blank" rel="noopener">公式サイト</a></div></div>
+        <div class="ev hi"><span class="t">18:45</span><div class="body"><div class="h"><span class="pin">🐑</span> ジンギスカンディナー <span style="font-size:11px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:1px 7px;margin-left:4px">予約済</span></div><div class="note">マルタケ すすきの本店（18:45〜）。新鮮なラム肉を炭火で焼く本格ジンギスカンの人気店、個室あり。</div><a class="ref" href="https://marutake.official.ec/" target="_blank" rel="noopener">公式</a><a class="ref" href="https://tabelog.com/hokkaido/A0101/A010103/1056998/" target="_blank" rel="noopener">食べログ</a></div></div>
+        <div class="ev free"><span class="t">夜〜深夜</span><div class="body"><div class="h">🌙 夜は完全フリー</div><div class="note">もいわ山ロープウェイで日本新三大夜景／締めラーメンは甘エビ濃厚スープの「えびそば一幻」など</div><a class="ref" href="https://mt-moiwa.jp/" target="_blank" rel="noopener">藻岩山ロープウェイ</a><a class="ref" href="https://www.ebisoba.com/" target="_blank" rel="noopener">えびそば一幻</a></div></div>
       </div>
     </section>
 
@@ -272,38 +271,19 @@
     <section id="day2">
       <div class="day-head">
         <div class="day-badge"><div class="d">DAY</div><div class="n">2</div></div>
-        <div class="ttl">選べる大自然デー<small>7月4日(土) ／ レンタカー（19:00返却）</small></div>
+        <div class="ttl">積丹ブルー＆余市ドライブ<small>7月4日(土) ／ レンタカー（19:00返却）</small></div>
       </div>
 
-      <div class="plan-lead">どちらも <b>10:00出発 → 19:00すすきの帰還</b>。前夜の夜更かし考慮でゆっくりスタート。タブで切替できます👇</div>
+      <div class="plan-lead">🦑 <b>狙いは「生ウニ」！</b> 積丹のウニは夏が旬だが、土曜は昼前に売り切れることも。<b>朝イチで出発して、開店直後にウニを確保</b>するルートにしています。早起き必須！</div>
 
-      <div class="plan-switch">
-        <button id="btnA" class="on" onclick="showPlan('A')">プランA<small>積丹ブルー＆余市</small></button>
-        <button id="btnB" onclick="showPlan('B')">プランB<small>定山渓ラフティング＆温泉</small></button>
-      </div>
-
-      <!-- Plan A -->
-      <div id="planA" class="plan on">
-        <div class="tl">
-          <div class="ev"><span class="t">10:00</span><div class="body"><div class="h">ホテル出発・レンタカー受取</div><div class="note">余市方面へドライブ</div></div></div>
-          <div class="ev hi"><span class="t">11:30</span><div class="body"><div class="h"><span class="pin">🥃</span> ニッカウヰスキー余市蒸溜所</div><div class="note">赤レンガの敷地散策。有料試飲で限定ウイスキー（運転手以外）</div></div></div>
-          <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🦑</span> 積丹で豪快海鮮ランチ</div><div class="note">ホッケ焼き・イカ刺し・カニをガッツリ。ウニ行列は回避する大人ルート</div></div></div>
-          <div class="ev hi"><span class="t">15:00</span><div class="body"><div class="h"><span class="pin">🌊</span> 神威岬で積丹ブルー</div><div class="note">片道20分の遊歩道→先端の絶景。売店でミント味ブルーソフト</div></div></div>
-          <div class="ev"><span class="t">16:45</span><div class="body"><div class="h">小樽の海沿いドライブ</div><div class="note">札幌へ約2時間</div></div></div>
-          <div class="ev free"><span class="t">19:00</span><div class="body"><div class="h">🌙 すすきの帰還・返却 → 海鮮居酒屋で打ち上げ</div><div class="note">道産の刺身・ホッケ・カニなど海の幸を肴に乾杯（魚屋の台所／開陽亭 など）</div></div></div>
-        </div>
-      </div>
-
-      <!-- Plan B -->
-      <div id="planB" class="plan">
-        <div class="tl">
-          <div class="ev"><span class="t">10:00</span><div class="body"><div class="h">ホテル出発・レンタカー受取</div><div class="note">定山渓方面へドライブ</div></div></div>
-          <div class="ev hi"><span class="t">11:30</span><div class="body"><div class="h"><span class="pin">🍖</span> 定山渓でローカルランチ</div><div class="note">生ジンギスカン「じんじん」／ネパールカレーの「八剣山果樹園」など</div></div></div>
-          <div class="ev hi"><span class="t">13:15</span><div class="body"><div class="h"><span class="pin">🚣</span> 豊平川ラフティング</div><div class="note">13:30午後便・約2時間。飛び込みスポットありで男旅のハイライト</div></div></div>
-          <div class="ev hi"><span class="t">16:00</span><div class="body"><div class="h"><span class="pin">♨️</span> 定山渓温泉で日帰り秘湯</div><div class="note">巨大露天で有名な老舗「豊平峡温泉」など源泉かけ流しでリカバリー</div></div></div>
-          <div class="ev"><span class="t">17:30</span><div class="body"><div class="h">車内爆音ドライブで帰還</div><div class="note">札幌へ約1時間半</div></div></div>
-          <div class="ev free"><span class="t">19:00</span><div class="body"><div class="h">🌙 すすきの帰還・返却 → 海鮮居酒屋で打ち上げ</div><div class="note">道産の刺身・ホッケ・カニなど海の幸を肴に乾杯（魚屋の台所／開陽亭 など）</div></div></div>
-        </div>
+      <div class="tl">
+        <div class="ev"><span class="t">07:30</span><div class="body"><div class="h">起床・出発準備</div><div class="note">前夜は飲みすぎ注意。朝勝負なので早寝推奨</div></div></div>
+        <div class="ev"><span class="t">08:00</span><div class="body"><div class="h">レンタカー受取・出発</div><div class="note">営業所オープンと同時に受取 → 積丹へ直行（余市経由 約2時間）</div></div></div>
+        <div class="ev hi"><span class="t">10:15</span><div class="body"><div class="h"><span class="pin">🦑</span> 積丹で生ウニ丼（最優先！）</div><div class="note">6〜8月解禁の積丹産・濃厚な生ウニ丼。開店直後を狙って売り切れ前に確保。ホッケ・イカ刺しもガッツリ。<br><span style="color:var(--accent);font-weight:700">※夏は混雑・完売あり。予約推奨</span></div><a class="ref" href="https://tabelog.com/hokkaido/A0106/A010602/1005212/" target="_blank" rel="noopener">中村屋（食べログ）</a><a class="ref" href="https://osyokujidokoromisaki.com/" target="_blank" rel="noopener">みさき</a></div></div>
+        <div class="ev hi"><span class="t">11:45</span><div class="body"><div class="h"><span class="pin">🌊</span> 神威岬で積丹ブルー</div><div class="note">積丹ブルーの海に突き出す断崖の岬。片道20分の「チャレンカの道」を歩き先端のパノラマ絶景へ。売店でミント味ブルーソフト。<br><span style="color:var(--accent);font-weight:700">※強風時はゲート閉鎖。現地情報を要確認</span></div><a class="ref" href="https://www.kanko-shakotan.jp/spot/cape-kamui-and-kamui-rock/" target="_blank" rel="noopener">積丹観光協会</a></div></div>
+        <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🥃</span> ニッカウヰスキー余市蒸溜所</div><div class="note">竹鶴政孝が拓いたニッカ発祥の地。赤レンガの敷地散策＋有料試飲バーで限定ウイスキー（運転手以外）。<br><span style="color:var(--accent);font-weight:700">※無料ガイドツアー希望なら完全予約制（約70分）</span></div><a class="ref" href="https://www.nikka.com/distilleries/yoichi/" target="_blank" rel="noopener">公式サイト</a><a class="ref" href="https://distillery.nikka.com/yoichi/reservation/reserve" target="_blank" rel="noopener">ツアー予約</a></div></div>
+        <div class="ev"><span class="t">15:30</span><div class="body"><div class="h">小樽の海沿いドライブ＆散策</div><div class="note">大正時代の石造倉庫が並ぶ小樽運河と、レトロな堺町通りをぶらり。ガラス・洋菓子店で食べ歩きも。札幌へ向けて移動。</div><a class="ref" href="https://otaru.gr.jp/shop/otarucanal" target="_blank" rel="noopener">小樽運河</a><a class="ref" href="https://otaru-sakaimachi.com/" target="_blank" rel="noopener">堺町通り</a></div></div>
+        <div class="ev free"><span class="t">18:30〜19:00</span><div class="body"><div class="h">🌙 すすきの帰還・レンタカー返却 → ハシゴ酒</div><div class="note">夜は完全フリー。北海道の海の幸・ザンギで2晩目へ</div></div></div>
       </div>
     </section>
 
@@ -315,12 +295,12 @@
       </div>
       <div class="tl">
         <div class="ev"><span class="t">09:30</span><div class="body"><div class="h">チェックアウト（10:00厳守）</div><div class="note">大通・すすきのの駅ロッカーへ荷物預け</div></div></div>
-        <div class="ev hi"><span class="t">10:00</span><div class="body"><div class="h"><span class="pin">🌽</span> 大通公園を散策（とうきびワゴン）</div><div class="note">名物のとうきびワゴンで焼きとうもろこし。芝生でのんびり朝の散歩</div></div></div>
-        <div class="ev"><span class="t">11:15</span><div class="body"><div class="h">さっぽろテレビ塔 周辺</div><div class="note">ベンチで北海道限定「サッポロクラシック」を一杯</div></div></div>
+        <div class="ev hi"><span class="t">10:00</span><div class="body"><div class="h"><span class="pin">🍚</span> 二条市場で海鮮丼の朝食</div><div class="note">125年以上続く「札幌市民の台所」。カニ・ウニなど新鮮な海の幸が並び、海鮮丼の朝食や食べ歩きが楽しめる。</div><a class="ref" href="https://nijomarket.com/" target="_blank" rel="noopener">公式サイト</a></div></div>
+        <div class="ev"><span class="t">11:15</span><div class="body"><div class="h">大通公園＆さっぽろテレビ塔 散策</div><div class="note">札幌中心を東西1.5km貫く都市公園と、東端に建つランドマーク・テレビ塔。ベンチで北海道限定「サッポロクラシック」を一杯。</div><a class="ref" href="https://odori-park.jp/" target="_blank" rel="noopener">大通公園</a><a class="ref" href="https://www.tv-tower.co.jp/" target="_blank" rel="noopener">さっぽろテレビ塔</a></div></div>
         <div class="ev"><span class="t">12:15</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌駅→新千歳空港</div></div></div>
         <div class="ev"><span class="t">12:55</span><div class="body"><div class="h">新千歳空港 着</div></div></div>
         <div class="ev"><span class="t">13:10</span><div class="body"><div class="h">搭乗手続・手荷物預け完了</div><div class="note">先に身軽になる</div></div></div>
-        <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🍜</span> お土産＆締めラーメン</div><div class="note">北海道ラーメン道場（えびそば一幻 など）</div></div></div>
+        <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🍜</span> お土産＆締めラーメン</div><div class="note">新千歳空港3階に道内人気ラーメン店約10軒が集結する「北海道ラーメン道場」。札幌・旭川・函館の名店を食べ比べ。</div><a class="ref" href="https://www.hokkaido-airports.com/ja/new-chitose/special/airport-noodle/" target="_blank" rel="noopener">ラーメン道場</a></div></div>
         <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">保安検査 通過</div></div></div>
         <div class="ev hi"><span class="t">15:00</span><div class="body"><div class="h">新千歳空港 発<span class="flighttag">CTS→UKB</span></div></div></div>
         <div class="ev"><span class="t">16:55</span><div class="body"><div class="h">神戸空港 着・解散</div></div></div>
@@ -334,8 +314,8 @@
         <h3>持ち物・準備メモ</h3>
         <ul class="check">
           <li><b>薄手の羽織りもの</b>（パーカー／ジャケット）<span class="must">必須</span><br><span style="color:var(--muted);font-size:12px">7月でも夜の札幌・海沿いは冷える</span></li>
-          <li><b>スニーカー</b> <span style="color:var(--muted);font-size:12px">※プランA選択時</span><span class="must">A必須</span><br><span style="color:var(--muted);font-size:12px">神威岬の遊歩道を往復40分</span></li>
-          <li><b>水着 or 濡れてOKなT/短パン＋タオル</b> <span style="color:var(--muted);font-size:12px">※プランB選択時</span><span class="must">B必須</span><br><span style="color:var(--muted);font-size:12px">ラフティング用に各自</span></li>
+          <li><b>スニーカー</b><span class="must">必須</span><br><span style="color:var(--muted);font-size:12px">神威岬の遊歩道を往復40分（アップダウンあり）</span></li>
+          <li><b>早起き</b>でウニを死守 🦑<span class="must">2日目</span><br><span style="color:var(--muted);font-size:12px">7:30起床・8:00出発。前夜の飲みはほどほどに</span></li>
           <li><b>レンタカー</b>は2日目のみ日帰り（19:00返却）<br><span style="color:var(--muted);font-size:12px">宿の駐車場問題を回避</span></li>
         </ul>
       </div>
@@ -344,19 +324,9 @@
     <footer>
       <div class="big">いい旅を 🍺🌊♨️</div>
       札幌・積丹 男3人旅 ／ 2026.7.3 – 7.5<br>
-      <span style="font-size:11px">しおり作成: 2026.6.9</span>
+      <span style="font-size:11px">しおり作成: 2026.6.9 ／ 更新: 2026.6.23（v2）</span>
     </footer>
 
   </div>
-
-<script>
-  function showPlan(p){
-    var a = p==='A';
-    document.getElementById('planA').classList.toggle('on', a);
-    document.getElementById('planB').classList.toggle('on', !a);
-    document.getElementById('btnA').classList.toggle('on', a);
-    document.getElementById('btnB').classList.toggle('on', !a);
-  }
-</script>
 </body>
 </html>
