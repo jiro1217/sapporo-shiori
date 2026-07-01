@@ -155,6 +155,9 @@
   }
   .plan{display:none}
   .plan.on{display:block;animation:fade .3s ease}
+  .pick-group{margin:6px 0 4px}
+  .pick-group .plan-lead{margin-bottom:10px}
+  .pick-group .tl{margin-top:2px}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .plan-lead{
     font-size:13px;color:var(--blue-deep);background:#eaf6f8;border:1px solid #c8e9ee;
@@ -301,13 +304,29 @@
         <div class="ev"><span class="t">08:00</span><div class="body"><div class="h">神戸空港 集合</div><div class="note">出発1時間15分前。チェックイン開始</div></div></div>
         <div class="ev"><span class="t">08:45</span><div class="body"><div class="h">保安検査 通過</div><div class="note">出発30分前締め切り</div></div></div>
         <div class="ev hi"><span class="t">09:15</span><div class="body"><div class="h">神戸空港 発<span class="flighttag">UKB→CTS</span></div><div class="note">フライト約1時間50分</div></div></div>
-        <div class="ev"><span class="t">11:05</span><div class="body"><div class="h">新千歳空港 着</div><div class="note">荷物受取後、JR駅へ移動</div></div></div>
-        <div class="ev"><span class="t">11:42</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌行</div></div></div>
-        <div class="ev"><span class="t">12:21</span><div class="body"><div class="h">札幌駅 着</div></div></div>
-        <div class="ev hi"><span class="t">12:40</span><div class="body"><div class="h"><span class="pin">🍛</span> スープカレーランチ</div><div class="note">札幌名物スープカレー。スパイスの効いた濃厚スープと角煮・チキンが人気の名店ぞろい。行列必至なので早めに。</div><div class="addr">GARAKU 札幌本店：札幌市中央区南3条東2丁目6-1 B1F<br>Suage+ 本店：札幌市中央区南4条西5丁目6-1 都志松ビル2F</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=スープカレーGARAKU札幌本店" target="_blank" rel="noopener">GARAKUを地図</a><a class="map" href="https://www.google.com/maps/search/?api=1&query=Suage+本店+札幌市中央区南4条西5丁目" target="_blank" rel="noopener">Suage+を地図</a><br><a class="ref" href="https://s-garaku.com/shop-garaku/" target="_blank" rel="noopener">GARAKU 本店</a><a class="ref" href="https://suage.info/stores/suage-plus/" target="_blank" rel="noopener">Suage+</a></div></div>
-        <div class="ev"><span class="t">14:00</span><div class="body"><div class="h">ホテルへ移動</div><div class="note">大通・すすきの周辺</div></div></div>
-        <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">チェックイン／荷物預け</div></div></div>
-        <div class="ev hi"><span class="t">15:15</span><div class="body"><div class="h"><span class="pin">🍺</span> サッポロビール博物館</div><div class="note">日本唯一のビール専門博物館。赤レンガの建物でプレミアムツアーに参加し、創業当時の再現ビールで開幕の乾杯。<br><span style="color:var(--accent);font-weight:700">※2026/7/1より入館有料化。要事前確認</span></div><div class="addr">札幌市東区北7条東9丁目1-1</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=サッポロビール博物館" target="_blank" rel="noopener">マップで開く</a><br><a class="ref" href="https://www.sapporobeer.jp/brewery/s_museum/" target="_blank" rel="noopener">公式サイト</a></div></div>
+        <div class="ev"><span class="t">11:05</span><div class="body"><div class="h">新千歳空港 着</div><div class="note">荷物受取。昼はどこで？（下のタブで切替）</div></div></div>
+
+        <div class="pick-group">
+          <div class="plan-lead">🍜 昼は<b>ラーメン / スープカレー / 回転寿司</b>から気分で（→ <a href="#food" style="color:var(--blue);font-weight:800">飲食店候補</a>）。<b>食べる場所で時間が変わります</b>👇</div>
+          <div class="plan-switch">
+            <button class="on" data-k="air" onclick="pick(this,'air')">✈️ 空港で食べる<small>着いてすぐ→移動</small></button>
+            <button data-k="sap" onclick="pick(this,'sap')">🏙 札幌で食べる<small>移動→街で</small></button>
+          </div>
+          <div class="plan on" data-plan="air"><div class="tl">
+            <div class="ev hi"><span class="t">11:30</span><div class="body"><div class="h"><span class="pin">🍜</span> 新千歳空港でランチ</div><div class="note">3Fで気分の一杯。ラーメン道場／函太郎（回転寿司）／lavi（スープカレー）など。</div><a class="ref" href="#food">飲食店候補「新千歳空港」</a></div></div>
+            <div class="ev"><span class="t">12:30</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">新千歳→札幌</div></div></div>
+            <div class="ev"><span class="t">13:09</span><div class="body"><div class="h">札幌駅 着</div></div></div>
+          </div></div>
+          <div class="plan" data-plan="sap"><div class="tl">
+            <div class="ev"><span class="t">11:42</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">新千歳→札幌</div></div></div>
+            <div class="ev"><span class="t">12:21</span><div class="body"><div class="h">札幌駅 着</div></div></div>
+            <div class="ev hi"><span class="t">12:40</span><div class="body"><div class="h"><span class="pin">🍛</span> 札幌でランチ</div><div class="note">気分でスープカレー／ラーメン／二条市場の海鮮丼など。行列必至なので早めに。</div><a class="ref" href="#food">飲食店候補「大通・すすきの」</a></div></div>
+          </div></div>
+        </div>
+
+        <div class="ev"><span class="t">14:00</span><div class="body"><div class="h">荷物を預けて身軽に</div><div class="note">ホテル or 札幌駅コインロッカー</div></div></div>
+        <div class="ev hi"><span class="t">14:50〜</span><div class="body"><div class="h"><span class="pin">🍺</span> サッポロビール博物館 ガイドツアー</div><div class="note">日本唯一のビール専門博物館。ガイド付き「プレミアムツアー」で創業当時の再現ビールを試飲。<br><span style="color:var(--accent);font-weight:700">※ツアーは事前予約制（開始2時間前まで）。空き枠：14:10〜（残7枠）／14:50〜（残5枠）</span><br><span style="color:var(--muted);font-size:12px">※2026/7/1より入館有料化。東区・すすきのから地下鉄＋徒歩約20分</span></div><div class="addr">札幌市東区北7条東9丁目1-1</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=サッポロビール博物館" target="_blank" rel="noopener">マップで開く</a><br><a class="ref" href="https://www.sapporobeer.jp/brewery/s_museum/" target="_blank" rel="noopener">公式サイト</a></div></div>
+        <div class="ev"><span class="t">16:30</span><div class="body"><div class="h">ホテルチェックイン</div><div class="note">※14:10枠のツアーにするなら全体を前倒し</div></div></div>
         <div class="ev hi"><span class="t">18:00</span><div class="body"><div class="h"><span class="pin">🐑</span> ジンギスカンディナー <span style="font-size:11px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:1px 7px;margin-left:4px">予約済</span></div><div class="note">マルタケ すすきの本店（18:00〜）。新鮮なラム肉を炭火で焼く本格ジンギスカンの人気店、個室あり。</div><div class="addr">札幌市中央区南5条西6丁目 多田ビル1F（すすきの）</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=じんぎすかんマルタケすすきの本店" target="_blank" rel="noopener">マップで開く</a><br><a class="ref" href="https://marutake.official.ec/" target="_blank" rel="noopener">公式</a><a class="ref" href="https://tabelog.com/hokkaido/A0101/A010103/1056998/" target="_blank" rel="noopener">食べログ</a></div></div>
         <div class="ev free"><span class="t">夜〜深夜</span><div class="body"><div class="h">🌙 夜は完全フリー</div><div class="note">もいわ山ロープウェイで日本新三大夜景／締めラーメンは甘エビ濃厚スープの「えびそば一幻」など</div><div class="addr">もいわ山麓駅：札幌市中央区伏見5丁目3-7<br>えびそば一幻 総本店：札幌市中央区南7条西9丁目1024-10</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=札幌もいわ山ロープウェイ+山麓駅" target="_blank" rel="noopener">藻岩山を地図</a><a class="map" href="https://www.google.com/maps/search/?api=1&query=えびそば一幻+総本店" target="_blank" rel="noopener">一幻を地図</a><br><a class="ref" href="https://mt-moiwa.jp/" target="_blank" rel="noopener">藻岩山ロープウェイ</a><a class="ref" href="https://www.ebisoba.com/" target="_blank" rel="noopener">えびそば一幻</a></div></div>
       </div>
@@ -366,11 +385,27 @@
         <div class="ev"><span class="t">09:30</span><div class="body"><div class="h">チェックアウト（10:00厳守）</div><div class="note">大通・すすきのの駅ロッカーへ荷物預け</div></div></div>
         <div class="ev hi"><span class="t">10:00</span><div class="body"><div class="h"><span class="pin">🌽</span> 大通公園のとうきびワゴンで朝食</div><div class="note">大通公園名物の「とうきびワゴン」。焼きとうもろこし・茹でとうきび・じゃがバターを芝生で頬張る、札幌らしい朝のひととき。<br><span style="color:var(--muted);font-size:12px">※例年4月下旬〜10月中旬の運行。西1〜西4丁目あたりに出店</span></div><div class="addr">大通公園：札幌市中央区大通西1〜12丁目</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=大通公園+とうきびワゴン" target="_blank" rel="noopener">マップで開く</a><br><a class="ref" href="https://odori-park.jp/" target="_blank" rel="noopener">大通公園</a></div></div>
         <div class="ev"><span class="t">11:15</span><div class="body"><div class="h">さっぽろテレビ塔 周辺</div><div class="note">大通公園の東端に建つランドマーク・テレビ塔。展望台から街並みを一望、ベンチで北海道限定「サッポロクラシック」を一杯。</div><div class="addr">さっぽろテレビ塔：札幌市中央区大通西1丁目</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=さっぽろテレビ塔" target="_blank" rel="noopener">マップで開く</a><br><a class="ref" href="https://www.tv-tower.co.jp/" target="_blank" rel="noopener">さっぽろテレビ塔</a></div></div>
-        <div class="ev"><span class="t">12:15</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌駅→新千歳空港</div></div></div>
-        <div class="ev"><span class="t">12:55</span><div class="body"><div class="h">新千歳空港 着</div></div></div>
-        <div class="ev"><span class="t">13:10</span><div class="body"><div class="h">搭乗手続・手荷物預け完了</div><div class="note">先に身軽になる</div></div></div>
-        <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🍜</span> お土産＆締めラーメン</div><div class="note">新千歳空港3階に道内人気ラーメン店約10軒が集結する「北海道ラーメン道場」。札幌・旭川・函館の名店を食べ比べ。</div><div class="addr">新千歳空港 国内線旅客ターミナルビル3F（千歳市美々987-22）</div><a class="map" href="https://www.google.com/maps/search/?api=1&query=新千歳空港+北海道ラーメン道場" target="_blank" rel="noopener">マップで開く</a><br><a class="ref" href="https://www.hokkaido-airports.com/ja/new-chitose/special/airport-noodle/" target="_blank" rel="noopener">ラーメン道場</a></div></div>
-        <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">保安検査 通過</div></div></div>
+        <div class="pick-group">
+          <div class="plan-lead">🍜 最終ランチも<b>ラーメン / スープカレー / 回転寿司</b>から気分で（→ <a href="#food" style="color:var(--blue);font-weight:800">飲食店候補</a>）。<b>空港で食べるか、札幌で食べてから移動か</b>👇</div>
+          <div class="plan-switch">
+            <button class="on" data-k="air" onclick="pick(this,'air')">✈️ 空港で食べる<small>移動→空港でごはん</small></button>
+            <button data-k="sap" onclick="pick(this,'sap')">🏙 札幌で食べる<small>ごはん→移動</small></button>
+          </div>
+          <div class="plan on" data-plan="air"><div class="tl">
+            <div class="ev"><span class="t">12:15</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌駅→新千歳空港</div></div></div>
+            <div class="ev"><span class="t">12:55</span><div class="body"><div class="h">新千歳空港 着</div></div></div>
+            <div class="ev"><span class="t">13:10</span><div class="body"><div class="h">搭乗手続・手荷物預け</div><div class="note">先に身軽になる</div></div></div>
+            <div class="ev hi"><span class="t">13:30</span><div class="body"><div class="h"><span class="pin">🍜</span> 空港で締めランチ＆お土産</div><div class="note">ラーメン道場／函太郎（回転寿司）／lavi（スープカレー）から気分で。</div><a class="ref" href="#food">飲食店候補「新千歳空港」</a></div></div>
+            <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">保安検査 通過</div></div></div>
+          </div></div>
+          <div class="plan" data-plan="sap"><div class="tl">
+            <div class="ev hi"><span class="t">11:45</span><div class="body"><div class="h"><span class="pin">🍛</span> 札幌で締めランチ</div><div class="note">気分でスープカレー／ラーメン／二条市場の海鮮丼など。食べてから空港へ。</div><a class="ref" href="#food">飲食店候補「大通・すすきの」</a></div></div>
+            <div class="ev"><span class="t">12:45</span><div class="body"><div class="h">JR快速エアポート 乗車</div><div class="note">札幌駅→新千歳空港</div></div></div>
+            <div class="ev"><span class="t">13:25</span><div class="body"><div class="h">新千歳空港 着</div></div></div>
+            <div class="ev"><span class="t">13:40</span><div class="body"><div class="h">搭乗手続・手荷物預け＆お土産</div></div></div>
+            <div class="ev"><span class="t">14:30</span><div class="body"><div class="h">保安検査 通過</div></div></div>
+          </div></div>
+        </div>
         <div class="ev hi"><span class="t">15:00</span><div class="body"><div class="h">新千歳空港 発<span class="flighttag">CTS→UKB</span></div></div></div>
         <div class="ev"><span class="t">16:55</span><div class="body"><div class="h">神戸空港 着・解散</div></div></div>
       </div>
@@ -484,6 +519,11 @@
       it.hidden = !(okC && okA);
     });
     if(btn){ Array.prototype.forEach.call(btn.parentElement.children, function(b){ b.classList.toggle('on', b===btn); }); }
+  }
+  function pick(btn, key){
+    var g = btn.closest('.pick-group');
+    g.querySelectorAll('.plan-switch button').forEach(function(b){ b.classList.toggle('on', b.dataset.k===key); });
+    g.querySelectorAll('.plan').forEach(function(p){ p.classList.toggle('on', p.dataset.plan===key); });
   }
 </script>
 </body>
